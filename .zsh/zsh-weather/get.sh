@@ -20,6 +20,8 @@
 
 . $HOME/.zsh/environment.sh
 
+winfo_file="$winfo_base/response.txt"
+
 if [ -f $winfo_file ]; then
     printf "`head -n 2 $winfo_file | tail -n 1 | awk -F, '{print "今日の天気 "$1" 気温 "$2"-"$3}'`"
     exit 0

@@ -20,6 +20,8 @@
 
 . $HOME/.zsh/environment.sh
 
+winfo_file="$winfo_base/response.txt"
+
 if [ -f $winfo_file ]; then
     if [ `wc -l $winfo_file | awk '{print $1}'` -ge 1 ]; then
         last=$(expr `date "+%s"` - `cat $winfo_file | head -n 1`)
@@ -29,4 +31,4 @@ if [ -f $winfo_file ]; then
     fi
 fi
 
-$HOME/.zsh/zsh-weather/get_weather > $winfo_file
+"$winfo_base/getweather" > $winfo_file

@@ -19,6 +19,8 @@
 # date  : 2016-02-27
 
 . $HOME/.zsh/environment.sh
+
+reuter_file="$reuter_base/response.txt"
 if [ -f $reuter_file ]; then
     if [ `wc -l $reuter_file | awk '{print $1}'` -ge 1 ]; then
         last=$(expr `date "+%s"` - `cat $reuter_file | head -n 1`)
@@ -28,4 +30,4 @@ if [ -f $reuter_file ]; then
     fi
 fi
 
-python $HOME/.zsh/zsh-reuter/getreuters.py > $reuter_file
+python "$reuter_base/getreuters.py" > $reuter_file

@@ -20,6 +20,8 @@
 
 . $HOME/.zsh/environment.sh
 
+reuter_file="$reuter_base/response.txt"
+
 if [ ! -f $reuter_file ]; then
     exit 0
 fi
